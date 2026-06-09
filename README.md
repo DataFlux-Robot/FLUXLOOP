@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="#-overview">Overview</a> • <a href="#-what-fluxloop-does">What it does</a> • <a href="#-the-thesis-worth-debating">The thesis</a> • <a href="#-built--validated">Proof</a> • <a href="#-roadmap">Roadmap</a> • <a href="#-get-involved">Get involved</a>
+  <a href="#-overview">Overview</a> • <a href="#-what-fluxloop-does">What it does</a> • <a href="#-the-thesis-worth-debating">The thesis</a> • <a href="#-built--validated">Proof</a> • <a href="#-product-lineup">Products</a> • <a href="#-get-involved">Get involved</a>
 </p>
 
 ---
@@ -68,17 +68,21 @@ This is not slideware. Each component is a working repo, validated against gold 
 
 > **Validated MVP:** an agent autonomously read the docs, drove an oscilloscope + relay, and wrote the driver itself.
 
-## 🗺️ Roadmap
+## 🎁 Product Lineup
 
-FLUXLOOP is one step on a longer path. The grand goal — a robot that researches and improves its own next generation — looks impossible. Every impossible plan becomes possible once it's decomposed into executable steps. Here are ours, and where we actually are:
+*Our roadmap, made tangible — every tier is both a product you can hold and a step toward the 2040 vision.*
 
-| Phase | What | Status |
-|---|---|---|
-| **0 · Building blocks** | The validated components above | ✅ built |
-| **1 · FLUXLOOP** | Agent-led R&D on *one* piece of hardware (bring-up + sim2real + driver) | 🏗️ now |
-| **2 · A subsystem** | Auto-research scales from a part to a whole modular robot subsystem | 🔮 next |
-| **3 · General physical auto-research** | Across physics domains (aero + EM + thermal + …) and hardware classes | 🔮 vision |
-| **4 · Recursive self-improvement** | A robot that designs and builds its own better next generation | 🔮 north star |
+Each tier runs the same **FLUXLOOP brain** (auto-research agent + physics simulator). What changes is **how much the agent can perceive and act** — the ladder climbs from *reading* a sensor → *seeing* the hardware → *moving to see it* → *acting on it* → *designing it*.
+
+| Tier | What's added | The problem it unlocks | Status |
+|---|---|---|---|
+| **mini** | FLUXLOOP box · single-modal LLM | Hardware that already exposes its working state through readable sensors (encoders, accessible telemetry) | 🎯 crowdfunding |
+| **pro** | + fixed external camera · multimodal LLM | Hardware with **no accessible state sensor** (e.g. an actuator without position feedback) — the camera becomes a virtual sensor and the agent *sees* the state | 🎯 crowdfunding |
+| **max** | + posable robotic camera arm + adjustable base (à la [Kynooe](https://www.kynooe.com/)) | When one fixed view isn't enough — **active perception**: the agent repositions to observe occluded states from multiple angles | 🔮 stretch |
+| **ultra** | + modular humanoid robot | The agent can now **act on and manipulate** hardware, not just observe — and the robot itself becomes a subject of auto-research | 🔮 future |
+| **Ulti** | + automated module-design system | The system **designs the humanoid's own modules** → an evolvable, general-purpose humanoid with general research capability. The 2040 endgame. | 🔮 north star · not for sale |
+
+> **This ladder is our roadmap, made tangible.** `mini` & `pro` are the products we bring to crowdfunding first; `ultra` & `Ulti` are the vision we build toward — clearly marked, never sold ahead of what's real. *(Prices, funding target, shipping windows and demos land with the campaign — see [Get involved](#-get-involved).)*
 
 ## ✅ Status — honest
 
@@ -97,7 +101,7 @@ This is a big puzzle, and we want sharp people on it.
 - ⭐ **Star** if you think physical AI's missing piece is *grounding*, not scale.
 - 💬 **[Discussions](https://github.com/DataFlux-Robot/FLUXLOOP/discussions)** — debate the sim2real-as-model-discovery thesis, or tell us what black-box hardware wrecked your last month.
 - 🛠️ **Contribute** — real-time kernels, multiphysics, robot control, agent systems. The component repos have open issues.
-- 🎁 **Crowdfunding (coming soon)** — we're preparing an early-access campaign. *(Reward tiers / hardware kit details TBD — watch this repo to be notified at launch.)*
+- 🎁 **Crowdfunding (coming soon)** — `mini` & `pro` (see [Product Lineup](#-product-lineup)) go to an early-access campaign first. *(Reward tiers, price and shipping land at launch — watch this repo to be notified.)*
 
 ---
 
