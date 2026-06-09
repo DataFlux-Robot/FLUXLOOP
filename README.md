@@ -64,6 +64,7 @@ This is not slideware. Each component is a working repo, validated against gold 
 | 🌐 World | **[FluxPhased](https://github.com/ExuberantWitness/FluxPhased-)** | **EM / phased-array** multiphysics sim (IQ-level) | MATLAB-validated **83/83**, ~985 sweeps |
 | 🦾 Body | **[FluxTendril](https://github.com/DataFlux-Robot/FluxTendril)** | Real-time nervous system: protocol-unifying Actuator/Sensor Bridge + hardware root-of-trust | architecting |
 | 🦾 Body | **[FluxTide](https://github.com/DataFlux-Robot/FluxTide)** | Universal robot controller — sample-based MPC + parallel envs | usable |
+| 🦾 Body | **[FluxAxon](https://github.com/DataFlux-Robot/FluxAxon)** | Deterministic TSN-over-USB bridge — connects a host to the DataFlux nervous system | 🌱 early |
 | 🔌 Body | **[FluxCurrent](https://github.com/DataFlux-Robot/FluxCurrent)** · **[FluxPulse](https://github.com/DataFlux-Robot/FluxPulse)** | Power & bus backbone (GaN; interleaved / bidirectional) | v0 hardware |
 
 > **Validated MVP:** an agent autonomously read the docs, drove an oscilloscope + relay, and wrote the driver itself.
@@ -113,6 +114,17 @@ This is a big puzzle, and we want sharp people on it.
 - 💬 **[Discussions](https://github.com/DataFlux-Robot/FLUXLOOP/discussions)** — debate the sim2real-as-model-discovery thesis, or tell us what black-box hardware wrecked your last month.
 - 🛠️ **Contribute** — real-time kernels, multiphysics, robot control, agent systems. The component repos have open issues.
 - 🎁 **Crowdfunding (coming soon)** — `Software`, `MICRO`, `mini` & `pro` (see [Product Lineup](#-product-lineup)) go to an early-access campaign first. *(Reward tiers, price and shipping land at launch — watch this repo to be notified.)*
+
+## 📬 Contact
+
+**Want to build this together, talk through the ideas, or invest?** Reach out — we're two technical founders and we read everything.
+
+<p align="center">
+  <img src="./assets/wechat-qr.png" alt="WeChat" width="240"/><br/>
+  <sub>Scan to add me on WeChat (张明昊)</sub>
+</p>
+
+Prefer GitHub? Open an [issue](https://github.com/DataFlux-Robot/FLUXLOOP/issues) or a [discussion](https://github.com/DataFlux-Robot/FLUXLOOP/discussions).
 
 ---
 
