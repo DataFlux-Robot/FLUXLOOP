@@ -73,10 +73,13 @@ auto-research 跨越多个物理场（气动 + 电磁 + 热 + 结构）与多类
 | 🌐 World | **[FluxPhased](https://github.com/ExuberantWitness/FluxPhased-)** | **电磁/相控阵**多物理场仿真（IQ 级；MATLAB 校验 83/83，~985 组参数扫描） | ✅ 已验证 |
 | 🦾 Body | **[FluxTendril](https://github.com/DataFlux-Robot/FluxTendril)** | 实时神经系统 + Actuator/Sensor Bridge：协议统一（CAN/EtherCAT/SPI/PWM）、热插拔、硬件 root-of-trust（SE/TPM）、TSN 双域实时控制 | 🏗️ 架构/原型期 |
 | 🔌 Body | **[FluxCurrent](https://github.com/DataFlux-Robot/FluxCurrent)** | 统一供电与多路母线（GaN），模块化机体的电力底座 | 🏗️ v0 硬件 |
-| 🦾 Body | **[FluxTide](https://github.com/DataFlux-Robot/FluxTide)** | 运动控制（MPC + 全身控制 WBC） | 🌱 规划中 |
+| 🔌 Body | **[FluxPulse](https://github.com/DataFlux-Robot/FluxPulse)** | 电源子系统：交错式 / 双向能量转换架构，为分布式系统提供可扩展供电 | 🏗️ 开发中 |
+| 🦾 Body | **[FluxTide](https://github.com/DataFlux-Robot/FluxTide)** | 通用机器人控制器框架：采样式 MPC + 并行环境加速（基于 dial-mpc 重构） | ✅ 可用 |
 | 🛠️ Tooling | **[FluxWeave](https://github.com/DataFlux-Robot/FluxWeave)** | 动态 URDF 建模工作台（STL → URDF → USD） | ✅ 可用 |
 
 **三层心智模型**：🧠 Mind（研究大脑，提假设/设计实验/符号回归发现修正项）· 🌐 World（精确物理，第一性原理求解 + 数据修正，**不是**数据驱动的近似世界模型）· 🦾 Body（实体接入，让 Agent 能真实下指令、读传感器、驱动硬件——云端基座模型碰不到的地方）。
+
+> 🧠 Mind 层延伸：EvoScientist 同时提供 PyPI / DeepAgents 版本（[FLUX-RESEARCH](https://github.com/ExuberantWitness/FLUX-RESEARCH)）；长期记忆基建 [FLUXGRAPHRAG](https://github.com/ExuberantWitness/FLUXGRAPHRAG) 构建于开源 HippoRAG 2 之上。
 
 ---
 
