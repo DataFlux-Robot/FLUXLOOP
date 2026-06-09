@@ -72,17 +72,28 @@ This is not slideware. Each component is a working repo, validated against gold 
 
 *Our roadmap, made tangible — every tier is both a product you can hold and a step toward the 2040 vision.*
 
-Each tier runs the same **FLUXLOOP brain** (auto-research agent + physics simulator). What changes is **how much the agent can perceive and act** — the ladder climbs from *reading* a sensor → *seeing* the hardware → *moving to see it* → *acting on it* → *designing it*.
+Each tier runs the same **FLUXLOOP brain** (auto-research agent + physics simulator). What changes is **how much the agent can perceive and act** — the ladder climbs from *reading* a sensor → *seeing* the hardware → *moving to see it* → *acting on it* → *designing it*. The box handles real-time control and sensing; heavy reasoning and multiphysics simulation run in the cloud by default (or fully on-device with the Local AI Module).
 
-| Tier | What's added | The problem it unlocks | Status |
+| Tier | What's added | Best for | From |
 |---|---|---|---|
-| **mini** | FLUXLOOP box · single-modal LLM | Hardware that already exposes its working state through readable sensors (encoders, accessible telemetry) | 🎯 crowdfunding |
-| **pro** | + fixed external camera · multimodal LLM | Hardware with **no accessible state sensor** (e.g. an actuator without position feedback) — the camera becomes a virtual sensor and the agent *sees* the state | 🎯 crowdfunding |
-| **max** | + posable robotic camera arm + adjustable base (à la [Kynooe](https://www.kynooe.com/)) | When one fixed view isn't enough — **active perception**: the agent repositions to observe occluded states from multiple angles | 🔮 stretch |
-| **ultra** | + modular humanoid robot | The agent can now **act on and manipulate** hardware, not just observe — and the robot itself becomes a subject of auto-research | 🔮 future |
-| **Ulti** | + automated module-design system | The system **designs the humanoid's own modules** → an evolvable, general-purpose humanoid with general research capability. The 2040 endgame. | 🔮 north star · not for sale |
+| 🎟️ **Software / Early Access** | Agent + cloud, no hardware | Trying it, joining the community, giving feedback | ¥199 / $28 |
+| ⚡ **MICRO** | HPM6750 / RK3566 + cloud API | Makers, students, price-sensitive builders (reasoning runs in cloud) | ¥1,999 / $280 |
+| 📦 **mini** | RK3588 / STM32MP257 edge compute | Hardware that already exposes its state via readable sensors | ¥5,999 / $845 |
+| 📷 **pro** | + fixed camera · multimodal | Hardware with **no readable state sensor** — the camera becomes a virtual sensor | ¥6,999 / $985 |
+| 🦾 **max** | + posable camera arm + base (à la [Kynooe](https://www.kynooe.com/)) | **Active perception** — the agent repositions to see occluded states | ¥15,999 / $2,250 |
+| 🔧 **Local AI Module** *(add-on)* | On-device CUDA compute — runs the LLM **and** multiphysics sim locally | **Secure, data-never-leaves** deployments | +¥5,999 / +$845 |
+| 🔮 **ultra / Ulti** | Modular humanoid → self-designing modules | The 2040 vision — **not for sale**, notify-me only | — |
 
-> **This ladder is our roadmap, made tangible.** `mini` & `pro` are the products we bring to crowdfunding first; `ultra` & `Ulti` are the vision we build toward — clearly marked, never sold ahead of what's real. *(Prices, funding target, shipping windows and demos land with the campaign — see [Get involved](#-get-involved).)*
+> *Indicative early-bird pricing — final tiers, funding target, shipping and demos land with the crowdfunding campaign. `ultra` & `Ulti` are the vision we build toward, clearly marked and never sold ahead of what's real.*
+
+### ☁️ Cloud & pricing — transparent by design
+
+By default the box handles control and sensing, while the **heavy LLM reasoning and GPU multiphysics simulation run in the cloud**. Pricing is usage-based and deliberately thin:
+
+- **LLM** ≈ DeepSeek price **+ 3%**
+- **Multiphysics simulation (GPU)** ≈ A100 rental **+ 5%**
+
+We charge a small markup for the **harness, spec, and tooling** — not for the tokens. Want to self-host? Go ahead, it's open. Need everything on-prem for security? The **Local AI Module** runs the full loop with **zero data leaving your hardware**.
 
 ## ✅ Status — honest
 
@@ -101,7 +112,7 @@ This is a big puzzle, and we want sharp people on it.
 - ⭐ **Star** if you think physical AI's missing piece is *grounding*, not scale.
 - 💬 **[Discussions](https://github.com/DataFlux-Robot/FLUXLOOP/discussions)** — debate the sim2real-as-model-discovery thesis, or tell us what black-box hardware wrecked your last month.
 - 🛠️ **Contribute** — real-time kernels, multiphysics, robot control, agent systems. The component repos have open issues.
-- 🎁 **Crowdfunding (coming soon)** — `mini` & `pro` (see [Product Lineup](#-product-lineup)) go to an early-access campaign first. *(Reward tiers, price and shipping land at launch — watch this repo to be notified.)*
+- 🎁 **Crowdfunding (coming soon)** — `Software`, `MICRO`, `mini` & `pro` (see [Product Lineup](#-product-lineup)) go to an early-access campaign first. *(Reward tiers, price and shipping land at launch — watch this repo to be notified.)*
 
 ---
 
