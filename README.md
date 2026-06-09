@@ -117,11 +117,11 @@ This is a big puzzle, and we want sharp people on it.
 
 ## 📬 Contact
 
-**Want to build this together, talk through the ideas, or invest?** Reach out — we're two technical founders and we read everything.
+**Want to build this together, talk through the ideas, or invest?** Reach out.
 
 <p align="center">
   <img src="./assets/wechat-qr.png" alt="WeChat" width="240"/><br/>
-  <sub>Scan to add me on WeChat (张明昊)</sub>
+  <sub>Scan to add on WeChat — note "FLUXLOOP invest / dev / discuss"</sub>
 </p>
 
 Prefer GitHub? Open an [issue](https://github.com/DataFlux-Robot/FLUXLOOP/issues) or a [discussion](https://github.com/DataFlux-Robot/FLUXLOOP/discussions).
