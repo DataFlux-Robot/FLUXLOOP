@@ -78,23 +78,23 @@ Each tier runs the same **FLUXLOOP brain** (auto-research agent + physics simula
 | Tier | What's added | Best for | From |
 |---|---|---|---|
 | 🎟️ **Software / Early Access** | Agent + cloud, no hardware | Trying it, joining the community, giving feedback | ¥199 / $28 |
-| ⚡ **MICRO** | HPM6750 / RK3566 + cloud API | Makers, students, price-sensitive builders (reasoning runs in cloud) | ¥1,999 / $280 |
-| 📦 **mini** | RK3588 / STM32MP257 edge compute | Hardware that already exposes its state via readable sensors | ¥5,999 / $845 |
+| ⚡ **MICRO** | Entry-tier on-board compute + cloud API | Makers, students, price-sensitive builders (reasoning runs in cloud) | ¥1,999 / $280 |
+| 📦 **mini** | Mid-tier on-board edge compute | Hardware that already exposes its state via readable sensors | ¥5,999 / $845 |
 | 📷 **pro** | + fixed camera · multimodal | Hardware with **no readable state sensor** — the camera becomes a virtual sensor | ¥6,999 / $985 |
 | 🦾 **max** | + posable camera arm + base (à la [Kynooe](https://www.kynooe.com/)) | **Active perception** — the agent repositions to see occluded states | ¥15,999 / $2,250 |
-| 🔧 **Local AI Module** *(add-on)* | On-device CUDA compute — runs the LLM **and** multiphysics sim locally | **Secure, data-never-leaves** deployments | +¥5,999 / +$845 |
+| 🔧 **Local AI Module** *(add-on)* | High-performance on-board compute — runs the LLM **and** multiphysics sim locally | **Secure, data-never-leaves** deployments | +¥5,999 / +$845 |
 | 🔮 **ultra / Ulti** | Modular humanoid → self-designing modules | The 2040 vision — **not for sale**, notify-me only | — |
 
 > *Indicative early-bird pricing — final tiers, funding target, shipping and demos land with the crowdfunding campaign. `ultra` & `Ulti` are the vision we build toward, clearly marked and never sold ahead of what's real.*
 
-### ☁️ Cloud & pricing — transparent by design
+### ☁️ Cloud & pricing — fair by design
 
-By default the box handles control and sensing, while the **heavy LLM reasoning and GPU multiphysics simulation run in the cloud**. Pricing is usage-based and deliberately thin:
+By default the box handles control and sensing, while the **heavy LLM reasoning and GPU multiphysics simulation run in the cloud**. Our pricing philosophy is simple: **you pay for usage at near-cost, and we earn from the value we add — not by marking up your tokens.**
 
-- **LLM** ≈ DeepSeek price **+ 3%**
-- **Multiphysics simulation (GPU)** ≈ A100 rental **+ 5%**
+- **LLM** — usage-based, **3% above the official API price**
+- **GPU compute (multiphysics simulation)** — **at market rate**
 
-We charge a small markup for the **harness, spec, and tooling** — not for the tokens. Want to self-host? Go ahead, it's open. Need everything on-prem for security? The **Local AI Module** runs the full loop with **zero data leaving your hardware**.
+Want to self-host? Go ahead, it's open. Need everything on-prem for security? The **Local AI Module** runs the full loop with **zero data leaving your hardware**.
 
 ## ✅ Status — honest
 
