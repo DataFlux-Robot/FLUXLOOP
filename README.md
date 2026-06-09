@@ -2,119 +2,100 @@
 
 # FLUXLOOP
 
-### The engine — and the master plan — for self-researching machines
-### 通往「通用机器人 + 通用自主研究能力」的引擎与路线图
+### An AI agent that brings up unknown hardware, discovers its real physics, and writes the driver — on its own.
 
-<sub>by **DataFLUX Dynamics**</sub>
+**Software got agents that write code. Hardware still takes an expert *weeks* to make one undocumented motor talk.**
+We're closing that gap — as the first step toward machines that research and improve *themselves*.
+
+<sub>· [中文](#中文) · built by **DataFLUX Dynamics** · 🏗️ early & open ·</sub>
 
 </div>
 
 ---
 
-## The Grand Plan · 宏大计划
+## The idea
 
-想象一台机器人，遇到任何未知问题，它不等人。
+Today's AI can write a web app in minutes. Point it at a real motor with a vague datasheet and a private protocol, and it's helpless — because **intelligence still can't touch the physical world.** That last gap is where every robotics team bleeds weeks.
 
-电池不够用——它自己研究新的电池配方，做出来，给自己换上。
-零件不认识、没有驱动——它自己探测、自己写驱动、把它接进身体。
-落到一颗没人去过的星球——它就地取样、研究当地化学、造出工具，自给自足。
-
-**通用机器人 + 通用自主研究能力。** 一台能自己提出假设、设计实验、操作仪器、发现规律、并立刻把成果造出来的机器——这是机器人技术树的终点，也是递归自我改进（recursive self-improvement）的雏形。多数人认为它要到 2040 年才可能。
-
-> A robot that, facing any unknown, doesn't wait for us — it researches, experiments, invents, and upgrades **itself**. General-purpose robots + general-purpose auto-research. The endgame of robotics, and the seed of recursive self-improvement.
-
-**我们认为它可以更早。而且我们已经在一步步搭建通往它的每一块拼图。**
-
-这个计划看起来不可能。但每一个不可能的宏大计划，都是被**分解成可执行的小步骤**之后才变得可能的。下面是我们的 roadmap——以及我们已经走到了哪。
-
----
-
-## The Roadmap · 路线图
+FLUXLOOP is the missing loop:
 
 ```
- Phase 0          Phase 1            Phase 2             Phase 3              Phase 4
- 已造的基石   →   FLUXLOOP      →    自研一个子系统   →   通用物理自主研究  →   递归自我改进
- building       agent-led          auto-research        general physical      recursive
- blocks         hardware R&D       a subsystem          auto-research         self-improvement
- ✅ validated   🏗️ now             🔮 next               🔮 vision             🔮 north star
-   │               │                   │                    │                     │
-   └─ 真 repo ─────┴── 闭合第一个 ──────┴── 从一个零件 ──────┴── 跨物理场、────────┴── 机器人设计并
-      已验证          自主研发闭环          到一台机器人           跨硬件类          制造自己的下一代
+   AGENT proposes  →  SOLVER predicts  →  PROBE the real hardware  →  CALIBRATE sim↔real
+        ↑                                                                    │
+        └──────────────── driver + real-performance model ←─────────────────┘
+                          (+ proprietary correction data, fed back)
 ```
 
-### Phase 0 — 基石已造并验证 · Building blocks, already built & validated `✅`
-不是 PPT，是跑起来、且对标黄金标准验证过的代码。见下方 [Component Map](#component-map--组件地图)。
+Give it a black-box actuator/sensor. It probes the protocol, predicts behavior with a first-principles multiphysics solver, runs experiments against the real device, and when parameter-fitting isn't enough it **discovers new correction terms** (symbolic regression) — closing the sim-to-real gap and emitting a working driver. **Months → hours.**
 
-### Phase 1 — FLUXLOOP：Agent-led 硬件研发 · `🏗️ 进行中`
-把基石编排成第一个闭环：给一个文档不全、协议私有的硬件（电机/作动器/传感器），AI 自主探测它 → 多物理场仿真预测 → 自动标定 sim2real → 生成驱动 + 标定真实性能。**把专家几个月的活压成几小时，让 3 人团队的研发吞吐接近 30 人。**
-> 这是"自主研究"第一次作用在**一个真实硬件**上。MVP 已验证：Agent 接示波器/继电器、自主查资料、完成驱动开发。
+## The bet worth arguing about
 
-### Phase 2 — 从一个零件，到一台机器人 · `🔮 Next`
-auto-research 从"标定一个部件"扩展到"自主设计与改进一个模块化机器人子系统"——驱动 + 供电 + 结构 + 控制协同迭代（FluxTendril + FluxCurrent + FluxWeave + FluxTide）。
+> **We think sim2real is a model-*discovery* problem, not a domain-randomization problem.**
+> Everyone else learns approximate physics from data (and inherits "physics slop"). We solve precise physics from first principles, then let an agent discover the correction terms that close the gap to reality. First-principles + learned residual > data-driven world model — for anything where physics precision actually matters.
+>
+> Think we're wrong? [Open an issue and tell us.](https://github.com/DataFlux-Robot/FLUXLOOP/issues)
 
-### Phase 3 — 通用物理自主研究 · `🔮 Vision`
-auto-research 跨越多个物理场（气动 + 电磁 + 热 + 结构）与多类硬件——一个不绑定单一领域的通用物理研究能力。第一性原理求解 + 数据驱动修正项，从方程算精确物理，再用现场实验校正。
+## Is it real? Yes — here's the code
 
-### Phase 4 — 递归自我改进 · `🔮 North Star`
-机器人用自己的 auto-research 能力，设计并制造自己效率更高的下一代部件，自己换上。**通用机器人 + 通用自主研究能力**在此闭环。
+Not slideware. Working repos, validated against gold standards:
 
-> **诚实声明**：Phase 0 已验证，Phase 1 进行中（电学闭环已通），Phase 2-4 是 roadmap 与北极星。我们不假装已经到达终点——我们证明的是，**我们已经在路上，且每一步都有真实代码落地**。
+| | What | Proof |
+|---|---|---|
+| 🧠 **[Flux-Insight](https://github.com/ExuberantWitness/Flux-Insight)** | Autonomous research engine (Claim-Chain knowledge graph + 21 composable skills) | v0.3.0, active |
+| 🌐 **[FLUXVortex](https://github.com/ExuberantWitness/FLUXVortex)** | First-principles **aero** solver, GPU vortex method | Goland flutter **2.4% err**, 97% Theodorsen |
+| 🌐 **[FluxPhased](https://github.com/ExuberantWitness/FluxPhased-)** | **EM / phased-array** multiphysics sim (IQ-level) | MATLAB-validated **83/83**, ~985 sweeps |
+| 🦾 **[FluxTendril](https://github.com/DataFlux-Robot/FluxTendril)** | Real-time nervous system: protocol-unifying Actuator/Sensor Bridge + hardware root-of-trust | architecting |
+| 🦾 **[FluxTide](https://github.com/DataFlux-Robot/FluxTide)** | Universal robot controller (sample-based MPC, parallel envs) | usable |
+| 🔌 **[FluxCurrent](https://github.com/DataFlux-Robot/FluxCurrent)** · **[FluxPulse](https://github.com/DataFlux-Robot/FluxPulse)** | Power & bus backbone (GaN; interleaved/bidirectional) | v0 hw |
 
----
+**MVP, validated:** an agent autonomously read the docs, drove an oscilloscope + relay, and wrote the driver itself.
 
-## Component Map · 组件地图
+## The bigger bet — why this is a loop, not a tool
 
-每个 repo 不是孤立项目，而是这条路上的一块拼图：
+A driver generator is a feature. We're after the loop behind it: **physical auto-research** — an agent that researches the physical world, and eventually improves its own body.
 
-| 层 Layer | 组件 Component | 角色 Role | 状态 |
-|---|---|---|---|
-| 🧠 Mind | **[Flux-Insight](https://github.com/ExuberantWitness/Flux-Insight)** (EvoScientist) | 自主研究引擎：Claim Chain v2 知识图谱 + PES 流转 + 21 Skills + 4-Persona/ELO/MAP-Elites | ✅ v0.3.0 活跃 |
-| 🌐 World | **[FLUXVortex](https://github.com/ExuberantWitness/FLUXVortex)** | 第一性原理**气动**多物理场求解（GPU 涡方法；Goland 颤振 2.4% 误差，97% Theodorsen 精度） | ✅ 已验证 |
-| 🌐 World | **[FluxPhased](https://github.com/ExuberantWitness/FluxPhased-)** | **电磁/相控阵**多物理场仿真（IQ 级；MATLAB 校验 83/83，~985 组参数扫描） | ✅ 已验证 |
-| 🦾 Body | **[FluxTendril](https://github.com/DataFlux-Robot/FluxTendril)** | 实时神经系统 + Actuator/Sensor Bridge：协议统一（CAN/EtherCAT/SPI/PWM）、热插拔、硬件 root-of-trust（SE/TPM）、TSN 双域实时控制 | 🏗️ 架构/原型期 |
-| 🔌 Body | **[FluxCurrent](https://github.com/DataFlux-Robot/FluxCurrent)** | 统一供电与多路母线（GaN），模块化机体的电力底座 | 🏗️ v0 硬件 |
-| 🔌 Body | **[FluxPulse](https://github.com/DataFlux-Robot/FluxPulse)** | 电源子系统：交错式 / 双向能量转换架构，为分布式系统提供可扩展供电 | 🏗️ 开发中 |
-| 🦾 Body | **[FluxTide](https://github.com/DataFlux-Robot/FluxTide)** | 通用机器人控制器框架：采样式 MPC + 并行环境加速（基于 dial-mpc 重构） | ✅ 可用 |
-| 🛠️ Tooling | **[FluxWeave](https://github.com/DataFlux-Robot/FluxWeave)** | 动态 URDF 建模工作台（STL → URDF → USD） | ✅ 可用 |
+```
+ Phase 0 ── Phase 1 ───────── Phase 2 ──────── Phase 3 ──────────── Phase 4
+ blocks     FLUXLOOP          a subsystem      general physical     recursive
+ ✅ built    🏗️ now            🔮 next           auto-research 🔮      self-improvement 🔮
+            (1 hardware)      (1 robot)        (any physics)        (it builds its own next gen)
+```
 
-**三层心智模型**：🧠 Mind（研究大脑，提假设/设计实验/符号回归发现修正项）· 🌐 World（精确物理，第一性原理求解 + 数据修正，**不是**数据驱动的近似世界模型）· 🦾 Body（实体接入，让 Agent 能真实下指令、读传感器、驱动硬件——云端基座模型碰不到的地方）。
+Phase 0 is shipped. Phase 1 is live (electrical loop closed; multiphysics = aero+EM today, thermal next). Phases 2–4 are the north star. **We don't claim we're there — we claim every step has real code under it.** That's the whole point.
 
-> 🧠 Mind 层延伸：EvoScientist 同时提供 PyPI / DeepAgents 版本（[FLUX-RESEARCH](https://github.com/ExuberantWitness/FLUX-RESEARCH)）；长期记忆基建 [FLUXGRAPHRAG](https://github.com/ExuberantWitness/FLUXGRAPHRAG) 构建于开源 HippoRAG 2 之上。
+## Why now
 
----
+Four thresholds crossed in the last 12 months, and not before: agents can finally *touch* hardware (MCP/Skill), agents can finally *do research* (workshop-grade output), a differentiable GPU physics base went open ([Newton](https://developer.nvidia.com/newton-physics), 2025), and base models got strong enough for multi-step autonomous loops. A year earlier, none of this works.
 
-## Why Now · 为什么是现在
+## Come build — or come argue
 
-四个条件过去 12 个月才同时跨过门槛，缺一不可：
+This is a big puzzle and we want sharp people on it.
 
-1. **Agent 第一次能碰硬件** — MCP / Skill 出现前，Agent 与物理硬件是断的。
-2. **Agent 第一次能做研究** — auto-research 刚能产出 workshop 级研究产出。
-3. **精确物理底座刚开源** — [NVIDIA Newton](https://developer.nvidia.com/newton-physics)（2025）可微分 GPU 力学引擎，直接支撑自动系统辨识。
-4. **基座模型刚够强** — 撑得起多步自主研究闭环。
-
-任一个晚一年，这事都做不成。这是早期布局窗口。
+- ⭐ **Star** if you think physical AI's missing piece is *grounding*, not scale
+- 💬 **[Discussions](https://github.com/DataFlux-Robot/FLUXLOOP/discussions)** — argue the sim2real-as-model-discovery thesis, or tell us what black-box hardware wrecked your last month
+- 🛠️ Real-time kernels · multiphysics · robot control · agent systems — the component repos have open issues
+- 🔬 Researchers/builders who care about recursive self-improvement in the *physical* world: let's talk
 
 ---
 
-## Join Us · 一起造
+<a name="中文"></a>
 
-这是一块需要很多人的拼图。无论你是 **real-time 内核 / 嵌入式 / 多物理场仿真 / 机器人控制 / Agent 系统** 的高手，还是被同一个未来吸引的人——欢迎你加入。
+## 中文
 
-- ⭐ **Star** 这个 repo，关注路线图推进
-- 🛠️ **贡献**：查看各组件仓库的 Issues 与 Discussions
-- 💬 **反馈**：你在硬件研发里被坑过哪些（驱动、协议、sim2real）？告诉我们，这直接影响我们造什么
-- 🤝 **投资 / 合作**：DataFLUX Dynamics 正在推进早期布局，欢迎接触
+**FLUXLOOP：一个能自主接入未知硬件、标定真实物理、生成驱动的 AI 研究员。**
 
----
+软件已经有了会写代码的 Agent；硬件至今要专家花几周，才能让一个没文档、私有协议的电机"开口"。FLUXLOOP 补上这一环——也是通往"能自我研究、自我进化的机器"的第一步。
 
-## License
+- **闭环**：Agent 提假设 → 第一性原理多物理场求解器预测 → 探测真实硬件 → 自动标定 sim2real；调参不够时用符号回归**自主发现修正项** → 输出驱动 + 真实性能模型。**几个月 → 几小时。**
+- **值得吵的命题**：sim2real 本质是**模型发现**问题，不是 domain randomization。别人从数据学近似物理（physics slop），我们从方程算精确物理、再让 Agent 发现修正项。物理精度要紧的场景，第一性原理 + 数据残差 > 数据驱动 world model。
+- **是真的**：FLUXVortex（Goland 2.4% 误差）、FluxPhased（MATLAB 83/83）、Flux-Insight（v0.3.0）、MVP 已让 Agent 自主写出驱动。
+- **诚实**：Phase 0 已验证、Phase 1 进行中（电学闭环已通，多物理场=气动+电磁，热在路上），Phase 2–4 是北极星。不假装到终点——每一步都有真代码。
 
-各子项目遵循其各自仓库的许可证（多为 Apache-2.0）。
+不同意？[来开个 issue 吵架。](https://github.com/DataFlux-Robot/FLUXLOOP/issues)
 
 ---
 
 <div align="center">
-<sub><b>FLUXLOOP</b> · DataFLUX Dynamics<br/>
-从一个硬件的自动研发，走向能自我研究、自我进化的机器。<br/>
+<sub><b>FLUXLOOP</b> · DataFLUX Dynamics · early & open<br/>
 <i>From auto-researching one piece of hardware, toward machines that research and improve themselves.</i></sub>
 </div>
