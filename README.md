@@ -1,9 +1,13 @@
 <p align="center">
-  <b>F L U X L O O P</b>
+  <img src="./assets/logo.png" alt="FLUXLOOP" width="420"/>
 </p>
 
 <p align="center">
   <i>An AI agent that brings up unknown hardware, learns its real physics, and writes the driver — on its own.</i>
+</p>
+
+<p align="center">
+  <b>Opening the era of the physical one- / few- / zero-person company —<br/>when AI does the physical R&D, a tiny team can build real hardware.</b>
 </p>
 
 <p align="center">
@@ -32,6 +36,8 @@ The system is organized around three layers. A **research brain** ([Flux-Insight
 
 It is, in the end, not a tool but a **loop**: every device FLUXLOOP touches sharpens its physics models and feeds the next one. That loop is the first concrete step toward a much larger goal — *physical auto-research*: machines that research, and eventually improve, themselves.
 
+And along the way it changes **who** can build hardware at all. When the agent does the physical R&D, a one-person — or even zero-person — company can ship real, physical products. That is the era we are opening: the **physical one- / few- / zero-person company**.
+
 ## 🔧 What FLUXLOOP does
 
 ```
@@ -52,6 +58,16 @@ For the engineer, the experience is simple: *plug in the unknown thing, get back
 > The mainstream approach learns approximate physics from massive data — and inherits its "physics slop." We do the opposite: solve precise physics from first principles, then let an agent *discover* the correction terms that close the gap to reality. For anything where physical precision actually matters, first-principles + a learned residual beats a data-driven world model.
 >
 > Think we're wrong? **[Open an issue and argue with us.](https://github.com/DataFlux-Robot/FLUXLOOP/issues)**
+
+## 📣 What developers are telling us
+
+We didn't guess this problem — we went and listened (to high-signal hardware/embedded communities). A developer, arguing about whether AI is overhyped for embedded work, wrote (verbatim, translated):
+
+> *"It's not that the model is dumb — it's that it never actually **sees** your hardware. The datasheet is read by OCR that can't even get the register bits right; the schematic is invisible to it; it just greps your whole codebase into context and the one register config that matters gets squeezed out. So you get: compiles clean, zero warnings — then a HardFault on the bench. For bare-metal, where one wrong bit loses everything, a generic agent simply can't do it yet."*
+
+**That is FLUXLOOP's entire thesis — stated by someone who isn't us.** Across the threads we read, the signal was consistent: the pain is real, today's workarounds are manual (people hand-feed datasheets and libraries to the model), and there is real demand for a *hardware-grounded* agent.
+
+→ Full market signal, quotes & methodology: **[MARKET_VALIDATION.md](./MARKET_VALIDATION.md)**
 
 ## 🧩 Built & validated
 
