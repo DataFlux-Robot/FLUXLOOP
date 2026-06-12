@@ -51,14 +51,6 @@
 
 对工程师来说，体验很简单：**插上那个未知的东西，几小时后拿回一个驱动，和关于"它到底怎么表现"的真相——不是几个月。**
 
-## 🎬 实物测试视频
-
-一次真实的实物硬件测试（不是概念片）：
-
-<video src="https://github.com/DataFlux-Robot/FLUXLOOP/raw/main/assets/demo-hardware-test.mp4" controls width="640"></video>
-
-▶️ **[点此观看实物测试视频](https://github.com/DataFlux-Robot/FLUXLOOP/raw/main/assets/demo-hardware-test.mp4)**（若播放器未内嵌加载）
-
 ## 🧠 一个值得讨论的命题
 
 > **我们认为 sim2real 本质上是一个模型*发现*问题，而不是 domain randomization 问题。**

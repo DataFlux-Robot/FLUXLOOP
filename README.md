@@ -51,14 +51,6 @@ Give FLUXLOOP a black-box part. It **probes** the bus and protocol, **predicts**
 
 For the engineer, the experience is simple: *plug in the unknown thing, get back a driver and the truth about how it actually behaves — in hours, not months.*
 
-## 🎬 Demo — real hardware test
-
-A real test run on physical hardware (not a concept clip):
-
-<video src="https://github.com/DataFlux-Robot/FLUXLOOP/raw/main/assets/demo-hardware-test.mp4" controls width="640"></video>
-
-▶️ **[Watch the hardware test video](https://github.com/DataFlux-Robot/FLUXLOOP/raw/main/assets/demo-hardware-test.mp4)** (if the player doesn't load inline)
-
 ## 🧠 The thesis worth debating
 
 > **We believe sim2real is a model-*discovery* problem, not a domain-randomization problem.**
