@@ -51,6 +51,14 @@ Give FLUXLOOP a black-box part. It **probes** the bus and protocol, **predicts**
 
 For the engineer, the experience is simple: *plug in the unknown thing, get back a driver and the truth about how it actually behaves — in hours, not months.*
 
+## 🎬 Demo — real hardware test
+
+A real test run on physical hardware (not a concept clip):
+
+<video src="https://github.com/DataFlux-Robot/FLUXLOOP/raw/main/assets/demo-hardware-test.mp4" controls width="640"></video>
+
+▶️ **[Watch the hardware test video](https://github.com/DataFlux-Robot/FLUXLOOP/raw/main/assets/demo-hardware-test.mp4)** (if the player doesn't load inline)
+
 ## 🧠 The thesis worth debating
 
 > **We believe sim2real is a model-*discovery* problem, not a domain-randomization problem.**
@@ -165,6 +173,11 @@ This is a big puzzle, and we want sharp people on it.
 - 💬 **[Discussions](https://github.com/DataFlux-Robot/FLUXLOOP/discussions)** — debate the sim2real-as-model-discovery thesis, or tell us what black-box hardware wrecked your last month.
 - 🛠️ **Contribute** — real-time kernels, multiphysics, robot control, agent systems. The component repos have open issues.
 - 🎁 **Crowdfunding (coming soon)** — `Node Base`, `Node Bridge`, `Node Aware` & `Node Vision` (see [Product Lineup](#-product-lineup)) go to an early-access campaign first. *(Reward tiers, price and shipping land at launch — watch this repo to be notified.)*
+
+## 🙏 Acknowledgements
+
+- Thanks to the **MiMo Orbit 100T Token Creator Incentive Program** for providing compute resources for the development of our key components.
+- Thanks to **Xiaomi** for **MiMo-V2.5-Pro-UltraSpeed** beta access. Its 1000+ tps inference lets the agent explore dozens of hypotheses in parallel with self-verification (e.g. Best-of-N protocol guessing on a black-box device), which materially helped us validate the system's usability.
 
 ## 📬 Contact
 
