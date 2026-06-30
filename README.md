@@ -32,7 +32,7 @@ Today's AI can scaffold a web app in minutes. Point it at a real motor with a va
 
 **FLUXLOOP** closes it. It is an agent-led hardware-R&D system (open-core: components open, integrated product commercial): connect any actuator, sensor, or device — even one with no documentation, an undocumented protocol, and performance specs its own maker can't give you — and FLUXLOOP autonomously figures out how to talk to it, characterizes its true physical behavior, and produces a working driver. What costs a specialist weeks — protocol bring-up, sim-to-real calibration, driver development — it compresses into hours.
 
-The system is organized around three layers. A **research brain** ([Flux-Insight / EvoScientist](https://github.com/ExuberantWitness/Flux-Insight)) proposes hypotheses, designs experiments, and — when parameter-tuning isn't enough — *discovers* new correction models via symbolic regression. A **precise multiphysics world** ([FLUXVortex](https://github.com/ExuberantWitness/FLUXVortex) for aerodynamics, [FluxPhased](https://github.com/ExuberantWitness/FluxPhased-) for electromagnetics) predicts behavior from first principles rather than from data-driven approximation. And a **real-time, secure body** ([FluxTendril](https://github.com/DataFlux-Robot/FluxTendril) + [FluxAxon](https://github.com/DataFlux-Robot/FluxAxon) + [FluxCurrent](https://github.com/DataFlux-Robot/FluxCurrent)) lets the agent actually probe and drive physical hardware — the one place a cloud model can never reach.
+The system is organized around three layers. A **research brain** ([Flux-Insight](https://github.com/ExuberantWitness/Flux-Insight)) proposes hypotheses, designs experiments, and — when parameter-tuning isn't enough — *discovers* new correction models via symbolic regression. A **precise multiphysics world** ([FLUXVortex](https://github.com/ExuberantWitness/FLUXVortex) for aerodynamics, [FluxPhased](https://github.com/ExuberantWitness/FluxPhased-) for electromagnetics) predicts behavior from first principles rather than from data-driven approximation. And a **real-time, secure body** ([FluxTendril](https://github.com/DataFlux-Robot/FluxTendril) + [FluxAxon](https://github.com/DataFlux-Robot/FluxAxon) + [FluxCurrent](https://github.com/DataFlux-Robot/FluxCurrent)) lets the agent actually probe and drive physical hardware — the one place a cloud model can never reach.
 
 It is, in the end, not a tool but a **loop**: every device FLUXLOOP touches sharpens its physics models and feeds the next one. That loop is the first concrete step toward a much larger goal — *physical auto-research*: machines that research, and eventually improve, themselves.
 
@@ -81,6 +81,7 @@ This is not slideware. Each component is a working repo, validated against gold 
 | 🦾 Body | **[FluxTendril](https://github.com/DataFlux-Robot/FluxTendril)** | Real-time nervous system: protocol-unifying Actuator/Sensor Bridge + hardware root-of-trust | architecting |
 | 🦾 Body | **[FluxAxon](https://github.com/DataFlux-Robot/FluxAxon)** | Deterministic TSN-over-USB bridge — connects a host to the DataFlux nervous system | 🌱 early |
 | 🔌 Body | **[FluxCurrent](https://github.com/DataFlux-Robot/FluxCurrent)** · **[FluxPulse](https://github.com/DataFlux-Robot/FluxPulse)** | Power & bus backbone (GaN; interleaved / bidirectional) | v0 hardware |
+| 📦 Assets | **[FLUXmeme](https://github.com/DataFlux-Robot/FLUXmeme)** | Self-describing **DevelopReady asset** format for embodied nodes — one file per node: body + mind + journal | v0.1 |
 
 > **Validated MVP:** an agent autonomously read the docs, drove an oscilloscope + relay, and wrote the driver itself.
 
@@ -106,7 +107,7 @@ Each tier runs the same **FLUXLOOP brain** (auto-research agent + physics simula
 
 ### 🧠 DevelopReady
 
-NVIDIA defined *SimReady* — assets that can be simulated. We go further: assets that can be **directly driven, calibrated, and deployed**. Every device FLUXLOOP researches produces a DevelopReady model — not just a simulation twin, but a working driver, a calibrated performance model, and the proprietary correction terms discovered along the way.
+NVIDIA defined *SimReady* — assets that can be simulated. We go further: assets that can be **directly driven, calibrated, and deployed**. Every device FLUXLOOP researches produces a DevelopReady model — not just a simulation twin, but a working driver, a calibrated performance model, and the proprietary correction terms discovered along the way. These assets are packaged in the [FLUXmeme](https://github.com/DataFlux-Robot/FLUXmeme) self-describing **DevelopReady asset format** — one file per embodied node, carrying its body, mind, and lifetime journal — so a researched device is portable, versioned, and ready to drive anywhere.
 
 ### 🌐 Shared Cognitive Pool
 
@@ -170,6 +171,7 @@ This is a big puzzle, and we want sharp people on it.
 
 - Thanks to the **MiMo Orbit 100T Token Creator Incentive Program** for providing compute resources for the development of our key components.
 - Thanks to **Xiaomi** for **MiMo-V2.5-Pro-UltraSpeed** beta access. Its 1000+ tps inference lets the agent explore dozens of hypotheses in parallel with self-verification (e.g. Best-of-N protocol guessing on a black-box device), which materially helped us validate the system's usability.
+- Thanks to the **D-Robotics Gravity Program (DGP, 地心引力计划)** for technical support.
 
 ## 📬 Contact
 
